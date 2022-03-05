@@ -2,6 +2,7 @@ package com.example.kalender;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 import java.sql.*;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -22,6 +23,12 @@ import java.sql.Time;
 public class MainActivity extends AppCompatActivity {
 
     Datenbank db;
+    String day;
+    String month;
+    String year;
+    String hour;
+    String minute;
+    String second;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,16 +56,32 @@ public class MainActivity extends AppCompatActivity {
     public void zurueckZurHauptansicht(View v) {setContentView(R.layout.fragment_dashboard); }
 
     // EditText name = (EditText)findViewById(R.id.aktivitaetEingabe);;
-    public void neuerTermin(View v, String pAktivitaet, Date pDatum)
+    public void neuerTermin(View v, String pAktivitaet, String pDatum, String pUhrzeit)
     {
         try
         {
             EditText termin = (EditText)findViewById(R.id.aktivitaetEingabe);
             pAktivitaet = termin.getText().toString();
 
-            pDatum = (02-02-2002);
+            Spinner day_array = (Spinner) findViewById(R.id.day_spinner);
+            String day = new String(String.valueOf(day_array));
+            Spinner month_array = (Spinner) findViewById(R.id.month_spinner);
+            String month = new String(String.valueOf(month_array));
+            Spinner year_array = (Spinner) findViewById(R.id.year_spinner);
+            String year = new String(String.valueOf(year_array));
 
-            db.datensatzEinfuegen("", pAktivitaet,xxx);
+            pDatum = day + "/" + month + "/" + year; //Hier anpassen
+
+            Spinner hour_array = (Spinner) findViewById(R.id.hour_spinner);
+            String hour = new String(String.valueOf(hour_array));
+            Spinner minute_array = (Spinner) findViewById(R.id.minute_spinner);
+            String minute = new String(String.valueOf(minute_array));
+            Spinner second_array = (Spinner) findViewById(R.id.second_spinner);
+            String second = new String(String.valueOf(second_array));
+
+            pUhrzeit = hour + "/" + minute + "/" + second; //Hier anpassen
+
+            db.datensatzEinfuegen(pDatum, pAktivitaet,pUhrzeit);
             zurueckZurHauptansicht(v);
         }
 

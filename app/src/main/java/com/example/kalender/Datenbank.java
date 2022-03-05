@@ -17,7 +17,7 @@ public class Datenbank {
             Statement stm = this.con.createStatement();
 
             // Tabelle erstellen 
-            String sql_create = "CREATE TABLE IF NOT EXISTS termin(datum DATE, aktivitaet STRING, Uhrzeit TIME);";
+            String sql_create = "CREATE TABLE IF NOT EXISTS termin(datum STRING, aktivitaet STRING, Uhrzeit STRING);";
             stm.execute(sql_create);
 
 
@@ -73,15 +73,15 @@ public class Datenbank {
     }
 
 
-    public void datensatzEinfuegen(Date pDatum, String pAktivitaet, Time pUhrzeit)
+    public void datensatzEinfuegen(String pDatum, String pAktivitaet, String pUhrzeit)
     {
         try {
             // Statement Objekt erstellen
             String sql_insert2 = "INSERT INTO termin(datum, aktivitaet, uhrzeit) VALUES(?, ?, ?)";
             PreparedStatement stm = con.prepareStatement(sql_insert2);
-            stm.setDate(1, pDatum);
+            stm.setString(1, pDatum);
             stm.setString(2, pAktivitaet);
-            stm.setTime(3, pUhrzeit);
+            stm.setString(3, pUhrzeit);
             stm.execute();
         }
 
