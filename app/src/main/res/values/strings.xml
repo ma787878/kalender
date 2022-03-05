@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+
 <resources>
     <string name="app_name">Kalender</string>
     <string name="title_home">Heute</string>
@@ -6,9 +8,10 @@
     <string name="abbrechen_termineinfuegen">Abbrechen</string>
     <string name="bestaetigen_termineinfuegen">Bestätigen</string>
     <string name="datum">Datum</string>
+    <string name="content_description_termin_hinzufuegen_button">Hier klicken, um Termin hinzuzufügen</string>
 
 
-    <?xml version="1.0" encoding="utf-8"?>
+
 
     <string-array name="day_array">
             <item>01</item>
@@ -46,18 +49,18 @@
         </string-array>
 
     <string-array name="month_array">
-        <item>Januar</item>
-        <item>Februar</item>
-        <item>März</item>
-        <item>April</item>
-        <item>Mai</item>
-        <item>Juni</item>
-        <item>Juli</item>
-        <item>August</item>
-        <item>September</item>
-        <item>Oktober</item>
-        <item>November</item>
-        <item>Dezember</item>
+        <item>01</item>
+        <item>02</item>
+        <item>03</item>
+        <item>04</item>
+        <item>05</item>
+        <item>06</item>
+        <item>07</item>
+        <item>08</item>
+        <item>09</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
 
     </string-array>
 

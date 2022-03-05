@@ -16,7 +16,8 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center_horizontal" />
 
     <CalendarView
         android:id="@+id/calendarView"
@@ -25,13 +26,14 @@
         android:layout_marginTop="30dp"
         android:layout_marginBottom="328dp"
         android:clickable="true"
-        android:focusable="auto"
+        android:focusable="true"
         android:focusedMonthDateColor="#00BCD4"
         android:unfocusedMonthDateColor="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_dashboard" />
+        app:layout_constraintTop_toBottomOf="@+id/text_dashboard"
+        tools:ignore="DuplicateClickableBoundsCheck" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"
@@ -39,15 +41,34 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="325dp"
         android:layout_marginLeft="325dp"
-        android:layout_marginTop="132dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
-        android:layout_marginBottom="139dp"
+        android:layout_marginBottom="256dp"
         android:clickable="true"
+        android:contentDescription="@string/content_description_termin_hinzufuegen_button"
+        android:focusable="true"
         android:onClick="ansichtWechseln"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@android:drawable/ic_menu_add" />
+        app:srcCompat="@android:drawable/ic_menu_add"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/floatingActionButton" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
