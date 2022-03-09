@@ -4,7 +4,7 @@ import java.sql.*;
 public class Datenbank {
     Connection con;
     //Datenbank db;
-
+    String notizenauslesen1;
 
     public void create (){
 
