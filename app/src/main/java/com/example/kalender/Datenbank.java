@@ -1,9 +1,13 @@
 package com.example.kalender;
+import android.widget.CalendarView;
+
 import java.sql.*;
 
 public class Datenbank {
     Connection con;
     //Datenbank db;
+
+
 
 
     public void create (){
@@ -54,11 +58,19 @@ public class Datenbank {
     //
     //            stm.execute();
 
-    public void datenSatzAuslesen()
+    public void datenSatzAuslesen(String parameterDatum)
     {
+        (CalendarView) MainActivity.findViewById(R.id.calendarView);
+        CalendarView date = CalendarView.getDate();
+        SimpleDateFormat sdf = new SimpleDateFormat("yy-MM-dd");
+
+        curDate = sdf.format(date.getTime());
+
+
+        parameterDatum = String.valueOf
         try {
 
-            String sql_select = "SELECT * FROM termin";
+            String sql_select = "SELECT * FROM termin WHERE datum='parameterDatum'";
             Statement stm = this.con.createStatement();
             ResultSet rs = stm.executeQuery(sql_select);
             while (rs.next()) {
