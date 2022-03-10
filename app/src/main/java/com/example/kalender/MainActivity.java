@@ -3,6 +3,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.sql.*;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -89,6 +90,16 @@ public class MainActivity extends AppCompatActivity {
         {
             e.printStackTrace();
         }
+
+
+    }
+    public void notizSpeichern(View view) {
+        EditText notiz = (EditText) findViewById(R.id.edittext_notizfeldHeute);
+        String notizString = notiz.getText().toString();
+        db.notizEinfügen(24022022, notizString);
+        TextView notizDatenbank = (TextView) findViewById ( R.id.textView_viewNotizDatenbank );
+        notizDatenbank.setText (db.datenbankAuslesenNotiz());
+
     }
 
 
