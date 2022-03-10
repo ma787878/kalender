@@ -4,11 +4,16 @@ import android.widget.CalendarView;
 import java.sql.*;
 import java.text.SimpleDateFormat;
 
+import android.view.View;
+import android.widget.TextView;
+
+
+
 public class Datenbank {
     Connection con;
     SimpleDateFormat sdf;
     //Datenbank db;
-
+    String notizenauslesen1;
 
 
 
@@ -59,6 +64,45 @@ public class Datenbank {
     //            stm.setString(2, notiz);
     //
     //            stm.execute();
+    public void notizEinfügen(int pDatum, String pNotiz) {
+        try {
+            String sql_insert2 = "INSERT INTO notiz(datum, notiz) VALUES(?, ?)";
+            PreparedStatement stm = con.prepareStatement(sql_insert2);
+
+            stm.setInt(1, pDatum);
+
+            stm.setString(2, pNotiz);
+
+            stm.execute();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public String datenbankAuslesenNotiz(){
+
+        try {
+            String sql_select = "SELECT * FROM notiz";
+            Statement stm = this.con.createStatement();
+            ResultSet rs = stm.executeQuery(sql_select);
+            String notizenauslesen2;
+            while (rs.next()) {
+                notizenauslesen2 = rs.getNString(1) + " " +
+                        rs.getString(2);
+                notizenauslesen1 = notizenauslesen1 + " " + notizenauslesen2;
+            }
+
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+        }
+        return notizenauslesen1;
+
+
+    }
+
+
+
 
     public void datensatzAuslesen(String parameterDatum)
     {
