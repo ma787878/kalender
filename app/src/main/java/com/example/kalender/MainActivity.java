@@ -1,6 +1,7 @@
 package com.example.kalender;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CalendarView;
 import android.widget.EditText;
 import android.widget.Spinner;
 
@@ -12,6 +13,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+import androidx.recyclerview.widget.RecyclerView;
 
 
 import java.sql.Connection;
@@ -19,6 +21,7 @@ import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.Statement;
 import java.sql.Time;
+import java.text.SimpleDateFormat;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -48,16 +51,32 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
 // zu Dashboard(Terminansiccht)
     public void ansichtWechseln(View v)
     {
         setContentView(R.layout.fragment_termineinfuegen);
     }
-    public void zurueckZurHauptansicht(View v) {setContentView(R.layout.fragment_dashboard); }
+    public void zurueckZurHauptansicht(View v)
+    {
+        setContentView(R.layout.activity_main);
+        BottomNavigationView navView = findViewById(R.id.nav_view);
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
+
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        NavigationUI.setupActionBarWithNavController(this, navController);
+        NavigationUI.setupWithNavController(navView, navController);
+
+    }
 
     // EditText name = (EditText)findViewById(R.id.aktivitaetEingabe);;
-    public void neuerTermin(View v, String pAktivitaet, String pDatum, String pUhrzeit)
+    public void neuerTermin(View v)
     {
+        String pAktivitaet;
+        String pDatum;
+        String pUhrzeit;
+
         try
         {
             EditText termin = (EditText)findViewById(R.id.aktivitaetEingabe);
@@ -89,6 +108,15 @@ public class MainActivity extends AppCompatActivity {
         {
             e.printStackTrace();
         }
+    }
+    public void datensatzAusgeben(View v)
+    {
+        CalendarView date = (CalendarView) findViewById(R.id.calendarView);
+        date.getDate();
+        String pDATE = new String(String.valueOf(date));
+
+        db.datensatzAuslesen(pDATE);
+
     }
 
 
