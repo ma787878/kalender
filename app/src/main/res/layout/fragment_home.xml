@@ -1,103 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scrollView"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fillViewport="true">
 
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginLeft="30dp"
+    android:layout_marginRight="30dp"
+    >
     <TextView
         android:id="@+id/text_home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+       android:layout_marginTop="20dp"
         android:textAlignment="center"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+
 
     <TextView
 
         android:id="@+id/notizfeldbeschreibung_heute"
-
         android:layout_width="wrap_content"
-
         android:layout_height="wrap_content"
-
-        android:layout_marginStart="40dp"
-
-        android:layout_marginLeft="40dp"
-
-        android:layout_marginTop="24dp"
-
-        android:layout_marginEnd="213dp"
-
-        android:layout_marginRight="213dp"
-
-        android:layout_marginBottom="34dp"
-
-        android:text="Halte hier Erlebnisse fest"
-
-        app:layout_constraintBottom_toTopOf="@id/edittext_notizfeldHeute"
-
-        app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintHorizontal_bias="0.0"
-
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_home" />
+        android:layout_marginTop="30dp"
+        android:text="@string/notizfeldbeschreibung_heute"
+        app:layout_constraintTop_toBottomOf="@id/text_home"
+        />
 
     <EditText
         android:id="@+id/edittext_notizfeldHeute"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="34dp"
-        android:layout_marginEnd="351dp"
-        android:layout_marginRight="351dp"
-        android:layout_marginBottom="574dp"
-        android:text=""
+        android:layout_marginTop="10dp"
         android:inputType="textMultiLine"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text=""
+        android:textSize="20sp"
         app:layout_constraintTop_toBottomOf="@+id/notizfeldbeschreibung_heute" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button_speichern"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="22dp"
-        android:layout_marginEnd="280dp"
-        android:layout_marginRight="280dp"
-        android:layout_marginBottom="504dp"
+        android:layout_marginTop="10dp"
         android:clickable="true"
+        android:focusable="true"
         android:onClick="notizSpeichern"
-        android:text="speichern"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/button_speichern"
         app:layout_constraintTop_toBottomOf="@+id/edittext_notizfeldHeute" />
 
     <TextView
         android:id="@+id/textView_viewNotizDatenbank"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
-        android:layout_marginLeft="70dp"
-        android:layout_marginTop="54dp"
-        android:layout_marginEnd="331dp"
-        android:layout_marginRight="331dp"
-        android:layout_marginBottom="426dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="10dp"
+        android:text=""
         app:layout_constraintTop_toBottomOf="@+id/button" />
+
+</LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+

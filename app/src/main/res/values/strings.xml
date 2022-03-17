@@ -9,6 +9,8 @@
     <string name="bestaetigen_termineinfuegen">Bestätigen</string>
     <string name="datum">Datum</string>
     <string name="content_description_termin_hinzufuegen_button">Hier klicken, um Termin hinzuzufügen</string>
+    <string name="notizfeldbeschreibung_heute">Halte hier Erlebnisse fest</string>
+    <string name="button_speichern">speichern</string>
 
 
 
