@@ -1,12 +1,9 @@
 package com.example.kalender;
-import android.widget.CalendarView;
 
 import java.sql.*;
 import java.text.SimpleDateFormat;
 
-import android.view.View;
-import android.widget.TextView;
-
+import androidx.recyclerview.widget.RecyclerView;
 
 
 public class Datenbank {
@@ -104,7 +101,7 @@ public class Datenbank {
 
 
 
-    public void datensatzAuslesen(String parameterDatum)
+    public RecyclerView datensatzAuslesen(String parameterDatum)
     {
         try {
 
@@ -120,6 +117,21 @@ public class Datenbank {
         catch(Exception e) {
                 e.printStackTrace();
             }
+        return null;
+    }
+
+    public void datensatzLoeschen(String pDatum, String pAktivitaet, String pUhrzeit)
+    {
+        try {
+            // Statement Objekt erstellen
+            String sql_insert2 = "DELETE FROM termin WHERE datum = " + pDatum + " AND aktivitaet = " + pAktivitaet + " AND uhrzeit = " + pUhrzeit;
+            PreparedStatement stm = con.prepareStatement(sql_insert2);
+            stm.execute();
+        }
+
+        catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 
@@ -128,6 +140,25 @@ public class Datenbank {
         try {
             // Statement Objekt erstellen
             String sql_insert2 = "INSERT INTO termin(datum, aktivitaet, uhrzeit) VALUES(?, ?, ?)";
+            PreparedStatement stm = con.prepareStatement(sql_insert2);
+            stm.setString(1, pDatum);
+            stm.setString(2, pAktivitaet);
+            stm.setString(3, pUhrzeit);
+            stm.execute();
+        }
+
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public void datensatzBearbeiten(String pDatum, String pAktivitaet, String pUhrzeit, String pDatum2, String pAktivitaet2, String pUhrzeit2)
+    {
+        Hier muss das irgendwie mit dem RecyclerView verknüpft werden
+        try {
+            // Statement Objekt erstellen
+            String sql_insert2 = "UPDATE termin SET datum (datum, aktivitaet, uhrzeit) VALUES(?, ?, ?) WHERE ";
             PreparedStatement stm = con.prepareStatement(sql_insert2);
             stm.setString(1, pDatum);
             stm.setString(2, pAktivitaet);
