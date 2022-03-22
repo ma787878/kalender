@@ -1,4 +1,5 @@
 package com.example.kalender;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CalendarView;
@@ -6,27 +7,21 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import java.sql.*;
+import com.example.kalender.database.Datenbank;
+import com.example.kalender.database.DatenbankService;
+import com.example.kalender.database.SQLiteDBHelper;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.LiveData;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.recyclerview.widget.RecyclerView;
 
-
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.DriverManager;
-import java.sql.Statement;
-import java.sql.Time;
-import java.text.SimpleDateFormat;
-
 public class MainActivity extends AppCompatActivity {
 
+    DatenbankService dbservice;
     Datenbank db;
     String day;
     String month;
@@ -37,7 +32,12 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Datenbank db = new Datenbank();
+        db = new Datenbank();
+        //db.create();
+        dbservice = new DatenbankService(getApplicationContext());
+
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         BottomNavigationView navView = findViewById(R.id.nav_view);
@@ -49,7 +49,13 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
-        db.create();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        dbservice.destroy();
+
     }
 
 
@@ -62,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
     public void zurueckZurHauptansicht(View v)
     {
         setContentView(R.layout.activity_main);
-        BottomNavigationView navView = findViewById(R.id.nav_host_fragment);rzyes5zse
+        BottomNavigationView navView = findViewById(R.id.nav_host_fragment);
     }
 
     // EditText name = (EditText)findViewById(R.id.aktivitaetEingabe);;
@@ -109,9 +115,10 @@ public class MainActivity extends AppCompatActivity {
     public void notizSpeichern(View view) {
         EditText notiz = (EditText) findViewById(R.id.edittext_notizfeldHeute);
         String notizString = notiz.getText().toString();
-        db.notizEinfügen(24022022, notizString);
+        dbservice.notizEinfuegen(24022022, notizString);
+        System.out.println("toll");
         TextView notizDatenbank = (TextView) findViewById ( R.id.textView_viewNotizDatenbank );
-        notizDatenbank.setText (db.datenbankAuslesenNotiz());
+        notizDatenbank.setText ("erfolgt:)"/*db.datenbankAuslesenNotiz()*/);
 
     }
     public void datensatzAusgeben(View v)
@@ -136,13 +143,13 @@ public class MainActivity extends AppCompatActivity {
     {
         RecyclerView item = (RecyclerView) findViewById(R.id.terminansicht);
         item.getChildItemId(v);
-        return Inhalt von RecyclerView
+     //   return Inhalt von RecyclerView
 
     }
 
     public void datensatzBearbeiten(View v)
     {
-        String pAktivitaet;
+ /*       String pAktivitaet;
         String pDatum;
         String pUhrzeit;
 
@@ -176,14 +183,14 @@ public class MainActivity extends AppCompatActivity {
         catch (Exception e)
         {
             e.printStackTrace();
-        }
+        }*/
     }
 
 
 
     public void TerminLoeschen(View v)
     {
-        String pAktivitaet;
+   /*     String pAktivitaet;
         String pDatum;
         String pUhrzeit;
 
@@ -217,7 +224,7 @@ public class MainActivity extends AppCompatActivity {
         catch (Exception e)
         {
             e.printStackTrace();
-        }
+        }*/
     }
 
 

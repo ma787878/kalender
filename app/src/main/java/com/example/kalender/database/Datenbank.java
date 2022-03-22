@@ -1,4 +1,4 @@
-package com.example.kalender;
+package com.example.kalender.database;
 
 import java.sql.*;
 import java.text.SimpleDateFormat;
@@ -161,7 +161,7 @@ public class Datenbank {
 
     public void datensatzBearbeiten(String pDatum, String pAktivitaet, String pUhrzeit, String pDatum2, String pAktivitaet2, String pUhrzeit2)
     {
-        Hier muss das irgendwie mit dem RecyclerView verknüpft werden
+      //Todo:  Hier muss das irgendwie mit dem RecyclerView verknüpft werden
         try {
             // Statement Objekt erstellen
             String sql_insert2 = "UPDATE termin SET datum (datum, aktivitaet, uhrzeit) VALUES(?, ?, ?) WHERE ";
