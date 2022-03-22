@@ -134,12 +134,6 @@ public class Datenbank {
         }
     }
 
-    //Test
-    public String test()
-    {
-        return "Test";
-    }
-
 
     public void datensatzEinfuegen(String pDatum, String pAktivitaet, String pUhrzeit)
     {
