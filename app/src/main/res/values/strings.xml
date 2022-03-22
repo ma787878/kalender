@@ -7,8 +7,11 @@
     <string name="title_notifications">Diagramme</string>
     <string name="abbrechen_termineinfuegen">Abbrechen</string>
     <string name="bestaetigen_termineinfuegen">Bestätigen</string>
+    <string name="loeschen_terminbearbeiten">Löschen</string>
     <string name="datum">Datum</string>
     <string name="content_description_termin_hinzufuegen_button">Hier klicken, um Termin hinzuzufügen</string>
+    <string name="notizfeldbeschreibung_heute">Halte hier Erlebnisse fest</string>
+    <string name="button_speichern">speichern</string>
 
 
 
