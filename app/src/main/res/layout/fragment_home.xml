@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/scrollView"
+    android:tag="fragment_home"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
@@ -16,6 +17,57 @@
     android:layout_marginLeft="30dp"
     android:layout_marginRight="30dp"
     >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/datum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:layout_marginRight="4dp"
+            android:text="@string/datum"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+
+        <Spinner
+            android:id="@+id/day_spinner_heute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:spinnerMode="dropdown"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+             />
+
+
+        <Spinner
+            android:id="@+id/month_spinner_heute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/month_array"
+
+            app:layout_constraintStart_toEndOf="@+id/day_spinner"
+            app:layout_constraintTop_toTopOf="parent"
+             />
+
+        <Spinner
+            android:id="@+id/year_spinner_heute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/year_array"
+
+            />
+
+    </LinearLayout>
+
     <TextView
         android:id="@+id/text_home"
         android:layout_width="match_parent"

@@ -15,13 +15,13 @@ public class SQLiteDBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String createNotizTable = "CREATE TABLE notiz(datum DATE, notiz STRING);";
+        String createNotizTable = "CREATE TABLE notiz(datum STRING, notiz STRING);";
         db.execSQL(createNotizTable);
 
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        this.onCreate(db);
     }
 }
