@@ -3,13 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/User/AndroidStudioProjects/Kalender 19.03.22/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.1795" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Kalender 19.03.22/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.1795" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Kalender 19.03.22/app/src/main/res/layout/activity_main.xml" value="0.3526093088857546" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Kalender 19.03.22/app/src/main/res/layout/fragment_dashboard.xml" value="0.264" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Kalender 19.03.22/app/src/main/res/layout/fragment_einfuegen_termin.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Kalender 19.03.22/app/src/main/res/layout/fragment_home.xml" value="0.15896739130434784" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Kalender 19.03.22/app/src/main/res/layout/fragment_terminbearbeiten.xml" value="0.264" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Kalender 19.03.22/app/src/main/res/layout/fragment_termineinfuegen.xml" value="0.264" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Kalender 19.03.22/app/src/main/res/layout/list_item_event.xml" value="0.15896739130434784" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Kalender 19.03.22/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1795" />
         <entry key="..\:/Users/User/AndroidStudioProjects/jlwjfesaiwfjl/app/src/main/res/layout/activity_main.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/User/AndroidStudioProjects/jlwjfesaiwfjl/app/src/main/res/layout/fragment_dashboard.xml" value="0.264" />
         <entry key="..\:/Users/User/AndroidStudioProjects/jlwjfesaiwfjl/app/src/main/res/layout/fragment_termineinfuegen.xml" value="0.4" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
