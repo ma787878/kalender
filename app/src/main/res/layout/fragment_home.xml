@@ -5,9 +5,11 @@
     android:tag="fragment_home"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     android:fillViewport="true">
 
 <androidx.constraintlayout.widget.ConstraintLayout
+
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 <LinearLayout
@@ -40,8 +42,7 @@
             android:id="@+id/day_spinner_heute"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-
+            android:entries="@array/day_array"
             android:spinnerMode="dropdown"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -79,6 +80,17 @@
         android:gravity="center_horizontal" />
 
 
+    <Button
+        android:id="@+id/button_speichern"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rect_rounded_button"
+        android:backgroundTint="@color/colorAccent"
+        android:focusable="true"
+        android:onClick="notizSpeichern"
+        android:text="@string/button_speichern"
+        app:layout_constraintTop_toBottomOf="@+id/edittext_notizfeldHeute" />
 
     <TextView
 
@@ -100,16 +112,6 @@
         android:textSize="20sp"
         app:layout_constraintTop_toBottomOf="@+id/notizfeldbeschreibung_heute" />
 
-    <Button
-        android:id="@+id/button_speichern"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:onClick="notizSpeichern"
-        android:text="@string/button_speichern"
-        app:layout_constraintTop_toBottomOf="@+id/edittext_notizfeldHeute" />
 
     <TextView
         android:id="@+id/textView_viewNotizDatenbank"
@@ -118,6 +120,41 @@
         android:layout_marginTop="10dp"
         android:text=""
         app:layout_constraintTop_toBottomOf="@+id/button" />
+
+
+    <CheckBox
+        android:id="@+id/button_sport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/checkBox_sport"
+        android:textSize="11dp" />
+
+    <CheckBox
+        android:id="@+id/button_verabredung"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/checkBox_verabredung"
+        android:textSize="11dp" />
+
+    <CheckBox
+        android:id="@+id/button_arbeitSchule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="@string/checkBox_arbeitSchule"
+        android:textSize="11dp" />
+
+
+    <CheckBox
+        android:id="@+id/button_feier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="@string/checkBox_feier"
+        android:textSize="11dp" />
+
+
+
 
 </LinearLayout>
 

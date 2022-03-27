@@ -15,13 +15,16 @@ public class SQLiteDBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String createNotizTable = "CREATE TABLE notiz(datum STRING, notiz STRING);";
+        String createNotizTable = "CREATE TABLE notiz(datum STRING, notiz STRING, sport INT, verabredung INT, arbeit INt, feier INt);";
         db.execSQL(createNotizTable);
 
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
+        String createNotizTable = "DROP TABLE notiz;";
+        db.execSQL(createNotizTable);
         this.onCreate(db);
     }
 }
