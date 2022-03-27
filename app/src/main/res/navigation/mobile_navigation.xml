@@ -15,11 +15,28 @@
         android:id="@+id/navigation_dashboard"
         android:name="com.example.kalender.ui.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_navigation_dashboard_to_einfuegen_termin"
+            app:destination="@id/einfuegen_termin" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.example.kalender.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/einfuegen_termin"
+        android:name="com.example.kalender.ui.einfuegen_termin.Einfuegen_TerminFragment"
+        android:label="fragment_einfuegen_termin"
+        tools:layout="@layout/fragment_einfuegen_termin" >
+        <action
+            android:id="@+id/action_einfuegen_termin_to_navigation_dashboard"
+            app:destination="@id/navigation_dashboard" />
+        <argument
+            android:name="id"
+            app:argType="org.bson.types.ObjectId"
+            app:nullable="true"/>
+    </fragment>
 </navigation>

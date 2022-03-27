@@ -12,8 +12,17 @@ import com.example.kalender.MainActivity;
 import com.example.kalender.R;
 
 public class SpinnerActivity extends Activity implements AdapterView.OnItemSelectedListener {
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+    }
 
     @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+
+    /*@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_home);
@@ -42,6 +51,6 @@ public class SpinnerActivity extends Activity implements AdapterView.OnItemSelec
     }
 
 
-
+*/
 }
 
